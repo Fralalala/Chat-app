@@ -1,0 +1,4 @@
+export const ADD_CONVERSATION = "ADD_CONVERSATION";
+export const SET_USERNAME = "SET_USERNAME";
+export const ADD_ROOM = "ADD_ROOM"
+export const SET_ROOMNAME = "SET_ROOMNAME"

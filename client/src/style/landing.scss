@@ -1,0 +1,25 @@
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    padding: 32px;
+    align-items: center;
+
+    > * {
+        margin: 15px 0 10px 0;
+    }
+    
+    h1 {
+        margin-top: 20px;
+    }
+}
+
+.checkbox {
+    align-self: flex-start;
+}
+
+#signInBtn {
+    background-color: #0278ae;
+    color: white;
+}
+

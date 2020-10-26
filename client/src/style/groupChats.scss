@@ -1,0 +1,54 @@
+.grpChats {
+  height: 100%;
+  width: 30%;
+  padding: 10px;
+}
+
+.groupBox {
+  color: red;
+  height: max-content;
+  max-height: 100px;
+}
+
+.discussion {
+  display: flex;
+}
+
+.discussionInfo {
+  padding: 10px;
+
+  .info {
+    margin-top: 5px;
+    font-size: 14px;
+  }
+}
+
+.users::-webkit-scrollbar {
+  display: none;
+}
+
+.grpChats {
+  display: flex;
+  flex-direction: column;
+  background-color: indigo;
+}
+
+.groupBox {
+  margin-bottom: 34px;
+}
+
+.users {
+  max-height: 100%;
+  overflow: scroll;
+  
+}
+
+.input-container {
+  margin-bottom: 20px;
+  height: fit-content;
+}
+
+.accordionDetails {
+  display: flex;
+  flex-direction: column;
+}

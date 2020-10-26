@@ -1,0 +1,66 @@
+#msg-container {
+    padding: 0;
+    margin-top: 100px;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    background-color: grey;
+}
+
+
+.messaging {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+}
+
+.msgField {
+    width: 100%;
+    display: flex;
+    padding-left: 10px;
+    height: fit-content;
+    background-color: lightseagreen;
+}
+
+.conversation {
+    height: 100%;
+    display: block;
+    width: 100%;
+    overflow: scroll;
+
+    
+    .sent {
+        background-color: #00bcd4;
+        margin-left: auto;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .received {
+        background-color: lightsteelblue;
+        margin-right: auto;
+    }
+}
+
+.conversation::-webkit-scrollbar {
+    display: none;
+  }
+
+.chatBubble {
+    min-height: 75px;
+    height: fit-content;
+    width: fit-content;
+    max-width: 500px;
+    margin: 10px 10px 10px 10px;
+    padding: 10px;
+    display: flex;
+}
+
+.chatInfo {
+    h2 {
+        margin-bottom: 5px;
+    }
+    
+    padding: 5px;
+}
