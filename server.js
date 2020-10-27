@@ -5,7 +5,8 @@ const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
-const port = process.env.PORT || 8000;
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 io.on("connection", (socket) => {
   let myPath = "";
@@ -38,5 +39,12 @@ io.on("connection", (socket) => {
   });
 });
 
+
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
+const port = process.env.PORT || 8000;
 
 app.listen(port);
