@@ -6,7 +6,6 @@ const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
-const port = process.env.PORT || 8080;
 
 io.on("connection", (socket) => {
   let myPath = "";
@@ -60,4 +59,5 @@ if (process.env.NODE_ENV === 'production') {
   );
 }
 
+const port = process.env.PORT || 8000;
 app.listen(port);
