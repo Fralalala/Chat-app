@@ -5,6 +5,8 @@ const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
 
+const port = process.env.PORT || 8000;
+
 io.on("connection", (socket) => {
   let myPath = "";
 
@@ -47,4 +49,4 @@ app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
-server.listen(8000, () => console.log(`server listening on port 8k and `));
+server.listen(port, () => console.log(`server listening on port 8k and `));
