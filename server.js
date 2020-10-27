@@ -37,4 +37,14 @@ io.on("connection", (socket) => {
   });
 });
 
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) =>
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  );
+}
+
+
 server.listen(8000, () => console.log(`server listening on port 8k and `));
