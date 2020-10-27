@@ -17,10 +17,9 @@ io.on("connection", (socket) => {
   });
 
   socket.on("enter room", (roomName) => {
-    
     socket.leaveAll();
     socket.join(roomName);
-    myPath = roomName
+    myPath = roomName;
   });
 
   socket.emit("alert-message", "You have Joined a room");
@@ -37,14 +36,15 @@ io.on("connection", (socket) => {
   });
 });
 
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static('client/build'));
-
-  app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  );
-}
-
+app.use(favicon(__dirname + "/build/favicon.ico"));
+// the __dirname is the current directory from where the script is running
+app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, "build")));
+app.get("/ping", function (req, res) {
+  return res.send("pong");
+});
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 server.listen(8000, () => console.log(`server listening on port 8k and `));
