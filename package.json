@@ -1,7 +1,6 @@
 {
   "name": "chat-app",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -18,5 +17,15 @@
     "express": "^4.17.1",
     "socket.io": "^2.3.0"
   },
-  "proxy": "http://localhost:8000"
+  "proxy": "http://localhost:8000",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fralalala/Chat-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Fralalala/Chat-app/issues"
+  },
+  "homepage": "https://github.com/Fralalala/Chat-app#readme",
+  "description": ""
 }
