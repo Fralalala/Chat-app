@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://admin:admin@chatappcluster.pkuqi.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "randomwords"
+}

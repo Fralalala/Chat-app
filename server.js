@@ -5,6 +5,14 @@ const app = express();
 const server = http.createServer(app);
 const socket = require("socket.io");
 const io = socket(server);
+const connectDB = require('./config/db')
+
+//Connect Database
+connectDB()
+
+//This would Enable the req.body to be usable. ??
+//Init MiddleWare
+app.use(express.json({extended: false}))
 
 io.on("connection", (socket) => {
   let myPath = "";
@@ -36,6 +44,9 @@ io.on("connection", (socket) => {
     io.emit("alert-message", "A user has disconnected");
   });
 });
+
+app.use('/api/users', require('./routes/users'))
+app.use('/api/auth', require('./routes/auth'))
 
 if (process.env.NODE_ENV === "production") {
   // Set static folder
